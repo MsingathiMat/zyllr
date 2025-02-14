@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Logo from './logo'
 import { Button } from './ui/button'
@@ -10,25 +11,14 @@ import {
     SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet"
+
+import NavList from './NavList';
 const NavBar = () => {
   return (
     <div className=" h-[80px] w-full flex items-center justify-between">
     <Logo />
 
-    <div className=' hidden lg:flex gap-12 justify-center items-center'>
-        <p>
-            Home 
-        </p>
-        <p>
-        Services 
-        </p>
-        <p>
-        Get Involved 
-        </p>
-        <p>
-        Contact us 
-        </p>
-    </div>
+<NavList  />
 
     <div className=' flex gap-2 justify-center items-center'>
 
@@ -44,10 +34,9 @@ const NavBar = () => {
   </SheetTrigger>
   <SheetContent>
     <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+      {/* <SheetTitle>Are you absolutely sure?</SheetTitle> */}
+      <SheetDescription className='mt-12'>
+      <NavList IsMobile />
       </SheetDescription>
     </SheetHeader>
   </SheetContent>
